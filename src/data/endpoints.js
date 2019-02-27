@@ -363,6 +363,7 @@ export const endpointsMap = {
         'path': {
           template: '/transactions/{transaction}',
         },
+        'fields': ['account','account_sequence','hash','ledger','result_xdr'],
         'setupComponent': require('../components/SetupPanes/SingleTransaction'),
       },
       'create': {
@@ -373,17 +374,17 @@ export const endpointsMap = {
         'path': {
           template: '/transactions',
         },
-        'fields': [{name: 'records', fields: ['hash','ledger','result_xdr'], array: true}],
+        'fields': ['hash','ledger','result_xdr'],
         'setupComponent': require('../components/SetupPanes/PostTransaction'),
       },
       'for_account': {
-        'label': 'تراکنش‌های حساب',
+        'label': 'تراکنشهای حساب',
         'helpUrl': 'https://www.stellar.org/developers/horizon/reference/transactions-for-account.html',
         'method': 'GET',
         'path': {
           template: '/accounts/{account_id}/transactions{?cursor,limit,order}',
         },
-        'fields': [{name: 'records', fields: ['account','hash','fee_paid'], array: true}],
+        'fields': ['account','account_sequence','hash','ledger','result_xdr'],
         'setupComponent': require('../components/SetupPanes/ForAccount'),
       },
       'for_ledger': {
