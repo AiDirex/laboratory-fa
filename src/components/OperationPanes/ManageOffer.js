@@ -8,7 +8,7 @@ import PositiveIntPicker from '../FormComponents/PositiveIntPicker.js';
 export default function ManageOffer(props) {
   let GenericOfferPickers = GenericOffer(props);
   return GenericOfferPickers.concat(
-    <OptionsTablePair label="Offer ID" key="offerId">
+    <OptionsTablePair label="شناسه پیشنهاد " key="offerId">
       <PositiveIntPicker
         value={props.values['offerId']}
         onUpdate={(value) => {props.onUpdate('offerId', value)}}

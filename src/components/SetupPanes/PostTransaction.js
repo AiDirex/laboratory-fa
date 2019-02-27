@@ -5,7 +5,7 @@ import XdrPicker from '../FormComponents/XdrPicker.js';
 
 export default function PostTransaction(props) {
   return <div>
-    <OptionsTablePair label="Transaction Envelope XDR">
+    <OptionsTablePair label="پاکت تراکنش به فرمت XDR">
       <XdrPicker
         value={props.values['tx']}
         onUpdate={(value) => {props.onUpdate('tx', value)}}

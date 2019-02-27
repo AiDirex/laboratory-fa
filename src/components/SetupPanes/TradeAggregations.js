@@ -7,13 +7,13 @@ import OrderPicker from '../FormComponents/OrderPicker.js';
 
 export default function TradeAggregations(props) {
   return <div>
-    <OptionsTablePair label="سکه پایه" optional={false}>
+    <OptionsTablePair label="ارز پایه" optional={false}>
       <AssetPicker
       value={props.values['base_asset']}
       onUpdate={(value) => {props.onUpdate('base_asset', value)}}
       />
     </OptionsTablePair>
-    <OptionsTablePair label="سکه شمارشی" optional={false}>
+    <OptionsTablePair label="ارز مقایسه شونده " optional={false}>
       <AssetPicker
       value={props.values['counter_asset']}
       onUpdate={(value) => {props.onUpdate('counter_asset', value)}}
@@ -31,7 +31,7 @@ export default function TradeAggregations(props) {
         onUpdate={(value) => {props.onUpdate('end_time', value)}}
         />
     </OptionsTablePair>
-    <OptionsTablePair label="شفافیت" optional={false}>
+    <OptionsTablePair label="درجه مقایسه" optional={false}>
       <TextPicker
         value={props.values['resolution']}
         onUpdate={(value) => {props.onUpdate('resolution', value)}}

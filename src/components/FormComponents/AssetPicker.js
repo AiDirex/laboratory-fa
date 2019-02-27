@@ -36,9 +36,9 @@ export default function AssetPicker(props) {
   }
 
   let assetButtons = {
-    'native': 'native',
-    'credit_alphanum4': 'Alphanumeric 4',
-    'credit_alphanum12': 'Alphanumeric 12',
+    'native': 'ارز محلی',
+    'credit_alphanum4': 'اسامی حداکثر ۴ کاراکتر',
+    'credit_alphanum12': 'اسامی حداکثر ۱۲ کاراکتر',
   };
 
   if (props.disableNative) {

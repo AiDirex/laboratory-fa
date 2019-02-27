@@ -4,7 +4,7 @@ import For from './For';
 import OperationPicker from '../FormComponents/OperationPicker.js';
 
 export default function ForOperation(props) {
-  let label = 'Operation ID';
+  let label = 'شناسه عملیات';
   let content = <OperationPicker
     value={props.values['operation']}
     onUpdate={(value) => {props.onUpdate('operation', value)}}

@@ -51,7 +51,7 @@ class EndpointExplorer extends React.Component {
           <div className="EndpointExplorer__setup">
               {endpointSetup}
           </div>
-          <div className="EndpointExplorer__setup">
+          <div className="EndpointExplorer__result_table">
             <ResultTable body={results.body && results.body[0] ? (JSON.parse(results.body[0])._embedded ?  JSON.parse(results.body[0])._embedded : JSON.parse(results.body[0])): {}}
                          keys={(endpoint && endpoint.fields) ? endpoint.fields : []}/>
           </div>

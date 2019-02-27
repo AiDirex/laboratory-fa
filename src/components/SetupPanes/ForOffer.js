@@ -4,7 +4,7 @@ import For from './For';
 import PositiveIntPicker from '../FormComponents/PositiveIntPicker.js';
 
 export default function ForOffer(props) {
-  let label = 'Offer ID';
+  let label = ' شناسه سفارش';
   let content = <PositiveIntPicker
     value={props.values['offer_id']}
     onUpdate={(value) => {props.onUpdate('offer_id', value)}}
