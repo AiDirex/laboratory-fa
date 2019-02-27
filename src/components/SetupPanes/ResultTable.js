@@ -6,7 +6,7 @@ export class ResultTable extends React.Component {
   render () {
     let {body, keys, label} = this.props
     let data = body
-    console.log({data, keys})
+    // console.log({data, keys})
 
     return <div>
       {data && <h3>{label ? label : 'نتیجه'}:</h3>}

@@ -5,13 +5,13 @@ import AssetPicker from '../FormComponents/AssetPicker.js';
 
 export default function Trades(props) {
   return <div>
-    <OptionsTablePair label="Selling Asset">
+    <OptionsTablePair label="فروش کالا">
       <AssetPicker
       value={props.values['selling_asset']}
       onUpdate={(value) => {props.onUpdate('selling_asset', value)}}
       />
     </OptionsTablePair>
-    <OptionsTablePair label="Buying Asset">
+    <OptionsTablePair label="خرید کالا">
       <AssetPicker
       value={props.values['buying_asset']}
       onUpdate={(value) => {props.onUpdate('buying_asset', value)}}

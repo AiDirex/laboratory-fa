@@ -3,7 +3,7 @@ import _ from 'lodash';
 import PickerError from './PickerError';
 
 export default function TextPicker(props) {
-  let {value, onUpdate, validator} = props;
+  let {value, onUpdate, validator, type} = props;
   let errorMessage;
 
   let validatorIsPresent = _.isFunction(validator);
@@ -13,7 +13,7 @@ export default function TextPicker(props) {
   }
 
   return <div>
-    <input type="text"
+    <input type={type ? type : 'test'}
       value={value}
       onChange={(event) => {
         onUpdate(event.target.value);

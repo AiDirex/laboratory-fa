@@ -5,7 +5,7 @@ const NETWORK = {
     base: 'http://localhost:8080/api/v1'
   },
   bridge: {
-    base: 'http://localhost:8006'
+    base: 'http://172.20.13.55:8006'
   },
   available: {
     main: {

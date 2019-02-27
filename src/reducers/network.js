@@ -3,7 +3,7 @@ import {CHOOSE_NETWORK, SET_PARAMS, SHOW_MODAL, HIDE_MODAL, UPDATE_MODAL} from "
 import NETWORK from '../constants/network';
 import {LOAD_STATE} from '../actions/routing';
 
-let defaultNetwork = {
+export let defaultNetwork = {
   name: NETWORK.defaultName,
   horizonURL: NETWORK.available[NETWORK.defaultName].horizonURL,
   networkPassphrase: NETWORK.available[NETWORK.defaultName].networkPassphrase

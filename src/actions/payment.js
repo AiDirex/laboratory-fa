@@ -1,4 +1,5 @@
 import axios from 'axios'
+import querystring from 'querystring'
 import dispatchInNewStack from '../utilities/dispatchInNewStack'
 import NETWORK from '../constants/network'
 
@@ -27,7 +28,7 @@ export function sendPayment (data) {
       method: 'POST',
       // headers: {'Authorization': `Basic aW9zOnZNeUs2dGVnWTU=`},
       url: `${NETWORK.bridge.base}/payment`,
-      data
+      data: querystring.stringify(data)
     }
     axios(options).then(response => {
       console.log(response)

@@ -4,7 +4,7 @@ import LedgerPicker from '../FormComponents/LedgerPicker.js';
 
 export default function SingleLedger(props) {
   return <div>
-    <OptionsTablePair label="Ledger Sequence">
+    <OptionsTablePair label="توالی دفترکل">
       <LedgerPicker
         value={props.values['ledger']}
         onUpdate={(value) => {props.onUpdate('ledger', value)}}

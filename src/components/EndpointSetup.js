@@ -64,6 +64,6 @@ function PostDataRow({formData}) {
 
 function SubmitRow(props) {
   return <div className="optionsTable__blank">
-    <button className="s-button" onClick={props.onSubmit}>تأیید</button>
+    <button className="s-button btn-warning" onClick={props.onSubmit}>تأیید</button>
   </div>
 }

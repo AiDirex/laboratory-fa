@@ -38,7 +38,7 @@ class ChangeTrust extends React.Component {
                 <TextPicker value={form.limit} onUpdate={(v) => {dispatch(setForm('limit', v))}}/>
               </OptionsTablePair>
               <br/>
-              <button className="s-button" onClick={() => {dispatch(sendChangeTrust(form))}}>ارسال</button>
+              <button className="s-button btn-warning" onClick={() => {dispatch(sendChangeTrust(form))}}>ارسال</button>
             </div>
           </div>}
         </div>

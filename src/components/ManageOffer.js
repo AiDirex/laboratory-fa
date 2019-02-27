@@ -55,7 +55,7 @@ class ManageOffer extends React.Component {
                 <TextPicker value={form.source} onUpdate={(v) => {dispatch(setForm('source', v))}}/>
               </OptionsTablePair>
               <br/>
-              <button className="s-button" onClick={() => {dispatch(sendOffer(form))}}>ارسال</button>
+              <button className="s-button btn-warning" onClick={() => {dispatch(sendOffer(form))}}>ارسال</button>
             </div>
           </div>}
         </div>
