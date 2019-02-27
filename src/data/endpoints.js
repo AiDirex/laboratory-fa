@@ -241,11 +241,7 @@ export const endpointsMap = {
         'path': {
           template: '/payments{?cursor,limit,order}',
         },
-<<<<<<< HEAD
         'fields': [{name: 'records', fields: ['source_account','type','starting_balance','funder','account'], array: true}],
-=======
-        'fields': [{name: 'records', fields: ['funder','type'], array: true}],
->>>>>>> dd9a9da7b28e19558712a413b2ecdc1ba6a80b99
         'setupComponent': require('../components/SetupPanes/All'),
       },
       'for_account': {
@@ -322,7 +318,7 @@ export const endpointsMap = {
           'offer_id': 'offer_id'
         },
         'fields': [{name: 'records', fields: ['ledger_close_time','base_account','base_ammount','base_asset_type','counter_account','counter_ammount','counter_asset_type','counter_asset_code','counter_asset_issue'], array: true}],
-        
+
         'setupComponent': require('../components/SetupPanes/Trades'),
       },
       'for_account': {
