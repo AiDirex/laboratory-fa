@@ -5,7 +5,7 @@ import {StrKey, Keypair} from 'stellar-sdk';
 export default function SecretKeyPicker(props) {
   return <TextPicker
     {...props}
-    placeholder={props.placeholder || 'Secret key (starting with S) or hash preimage (in hex)'}
+    placeholder={props.placeholder || 'کلید خصوصی(که با S شروع میشود).'}
     validator={(value) => {
       if (value.charAt(0) == 'S') {
         if (!StrKey.isValidEd25519SecretSeed(value)) {

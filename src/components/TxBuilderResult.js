@@ -37,7 +37,7 @@ export default class TxBuilderResult extends React.Component {
         errorTitleText = `خطاهای فرم را اصلاح نمایید:`;
         finalResult = formatErrorList(transactionBuild.errors);
       } else {
-        successTitleText = `Success! Transaction Envelope XDR:`;
+        successTitleText = `تراکنش با موفقیت انجام شد! بسته XDR تراکنش به صورت زیر میباشد.`;
         finalResult = <div>
           Network Passphrase:<br />
           {this.props.networkPassphrase}<br />
@@ -47,18 +47,14 @@ export default class TxBuilderResult extends React.Component {
           {transactionBuild.xdr}
           </div>
         signingInstructions = <p className="TransactionBuilderResult__instructions">
-          In order for the transaction to make it into the ledger, a transaction must be successfully
-          signed and submitted to the network. The laboratory provides
-          the <a href="#txsigner">Transaction Signer</a> to for signing a
-          transaction, and the <a href="#explorer?resource=transactions&endpoint=create">Post Transaction endpoint</a> for
-          submitting one to the network.
+          <a href="#txsigner"></a><a href="#explorer?resource=transactions&endpoint=create"></a>
         </p>;
         signingLink = <a className="s-button"
           href={txSignerLink(transactionBuild.xdr)}
-          onClick={scrollOnAnchorOpen}>Sign in Transaction Signer</a>
+          onClick={scrollOnAnchorOpen}>تراکنش را امضا کنید</a>
         xdrLink = <a className="s-button"
           href={xdrViewer(transactionBuild.xdr, 'TransactionEnvelope')}
-          onClick={scrollOnAnchorOpen}>View in XDR Viewer</a>
+          onClick={scrollOnAnchorOpen}>فرمت XDR را نمایش دهید</a>
       }
     }
 

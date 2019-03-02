@@ -72,7 +72,7 @@ class TransactionSigner extends React.Component {
           >در بخش نمایش دهنده XDR نشان داده شود.</a>;
         resultTitle = <h3 className="TxSignerResult__title">Transaction signed!</h3>;
         submitInstructions = <p className="TxSignerResult__instructions">
-          اکن.ن تراکنش شما امضا شده و شما میتوانید آن را در شبکه ارسال و ثبت کنید.نتایج به شما اعلام خواهد شد.
+          اکنون تراکنش شما امضا شده و شما میتوانید آن را در شبکه ارسال و ثبت کنید.نتایج به شما اعلام خواهد شد.
         </p>
       }
 
@@ -103,7 +103,7 @@ class TransactionSigner extends React.Component {
                 <p className="TxSignerOverview__titleBar__title">Transaction overview</p>
                 <a className="TxSignerOverview__titleBar__reset"
                   onClick={() => dispatch(clearTransaction())}>
-                  Clear and import new transaction</a>
+                  تراکنش فعلی را پاک کرده و یک تراکنش جدید بسازید.</a>
               </div>
               <div className="simpleTable">
                 {_.map(infoTable, (content, label) => {
@@ -117,24 +117,24 @@ class TransactionSigner extends React.Component {
           </div>
           <div className="so-chunk">
             <div className="TxSignerKeys TransactionSigner__keys">
-              <p className="TxSignerKeys__title">Signatures <HelpMark href="https://www.stellar.org/developers/learn/concepts/multi-sig.html" /></p>
+              <p className="TxSignerKeys__title">امضاها <HelpMark href="https://www.stellar.org/developers/learn/concepts/multi-sig.html" /></p>
               <div className="optionsTable">
-                <OptionsTablePair label="Add Signer">
+                <OptionsTablePair label="امضا کننده را اضافه کنید">
                   <MultiPicker
                     component={SecretKeyPicker}
                     value={signers}
                     onUpdate={(value) => dispatch(setSecrets(value))}
                   />
                 </OptionsTablePair>
-                <OptionsTablePair label="Ledger Wallet">
+                <OptionsTablePair label="دفترکل کیف پول">
                   <BipPathPicker
                     value={bipPath}
                     onUpdate={(value) => dispatch(setBIPPath(value))}
                   />
                   <button
-                    className="s-button TxSignerKeys__signBipPath"
+                    className="s-button TxSignerKeys__signBipPath btn-warning"
                     onClick={() => {dispatch(signWithLedger(xdr, bipPath))}}
-                  >Sign with BIP Path</button>
+                  >با </button>
                   {ledgerwalletMessage}
                 </OptionsTablePair>
               </div>

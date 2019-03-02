@@ -207,9 +207,9 @@ export const endpointsMap = {
           'selling_asset_issuer': 'selling_asset.issuer',
           'buying_asset_type': 'buying_asset.type',
           'buying_asset_code': 'buying_asset.code',
-          'buying_asset_issuer': 'buying_asset.issuer',
+          'buying_asset_issuer': 'busource ying_asset.issuer',
         },
-        'fields': ['asset_code', 'asset_issuer'],
+        'fields': ['base', 'counter'],
         'setupComponent': require('../components/SetupPanes/OrderBookDetails'),
       }
     }

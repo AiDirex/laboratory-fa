@@ -76,7 +76,7 @@ function codeValidator(value) {
   } else {
     return;
   }
-
+seeeeeee
   let code = value.code || '';
 
   if (code && !code.match(/^[a-zA-Z0-9]+$/g)) {

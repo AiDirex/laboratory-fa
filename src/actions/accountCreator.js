@@ -36,7 +36,7 @@ export function startFriendbotRequest(target) {
         dispatchInNewStack(dispatch, {
           type: FINISH_FRIENDBOT_REQUEST,
           target,
-          message: `Successfully funded ${target} on the test network`,
+          message: `پرداخت به حساب ${target} در شبکه تست موفقیت آمیز بود . `,
           status: 'success',
           code: '',
         })
