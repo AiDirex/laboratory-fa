@@ -115,7 +115,7 @@ function sequenceFetcherError(state = '', action) {
       return `Account not found. Make sure the correct network is selected and the account is funded/created.`;
     }
     if (payload.status === 0) {
-      return `Unable to reach server at ${payload.config.url}`;
+      return `قادر به درسترسی به سرور در  ${payload.config.url} نیست.`;
     }
     return JSON.stringify(action.payload, null, 2);
   }

@@ -5,7 +5,7 @@ import PubKeyPicker from '../FormComponents/PubKeyPicker.js';
 
 export default function AccountMerge(props) {
   return [
-    <OptionsTablePair label="Destination" key="destination">
+    <OptionsTablePair label="مقصد" key="destination">
       <PubKeyPicker
         value={props.values['destination']}
         onUpdate={(value) => {props.onUpdate('destination', value)}}

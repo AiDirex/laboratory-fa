@@ -6,9 +6,9 @@ export default function PositiveIntPicker(props) {
     {...props}
     validator={(value) => {
       if (value.charAt(0) === '-') {
-        return 'Expected a positive number or zero.';
+        return 'عددی مثبت و یا صفر وارد کنید.';
       } else if (!value.match(/^[0-9]*$/g)) {
-        return 'Expected a whole number.';
+        return 'لطفا یک عدد وارد کنید.';
       }
 
       if (typeof props.validator !== 'undefined') {

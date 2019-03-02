@@ -7,19 +7,19 @@ import BooleanPicker from '../FormComponents/BooleanPicker.js';
 
 export default function AllowTrust(props) {
   return [
-    <OptionsTablePair label="Trustor" key="trustor">
+    <OptionsTablePair label="اعتماد کننده" key="trustor">
       <PubKeyPicker
         value={props.values['trustor']}
         onUpdate={(value) => {props.onUpdate('trustor', value)}}
         />
     </OptionsTablePair>,
-    <OptionsTablePair label="Asset Code" key="assetCode">
+    <OptionsTablePair label="کد کالا" key="assetCode">
       <TextPicker
         value={props.values['assetCode']}
         onUpdate={(value) => {props.onUpdate('assetCode', value)}}
         />
     </OptionsTablePair>,
-    <OptionsTablePair label="Authorize" key="authorize">
+    <OptionsTablePair label="تصدیق هویت" key="authorize">
       <BooleanPicker
         value={props.values['authorize']}
         onUpdate={(value) => {props.onUpdate('authorize', value)}}

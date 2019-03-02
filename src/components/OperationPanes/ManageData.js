@@ -18,23 +18,23 @@ export default function ManageData(props) {
   }
 
   return [
-    <OptionsTablePair label="Entry name" key="name">
+    <OptionsTablePair label="نام ورودی" key="name">
       <TextPicker
         value={props.values['name']}
         onUpdate={(value) => {props.onUpdate('name', value)}}
         validator={nameValidator}
       />
     </OptionsTablePair>,
-    <OptionsTablePair label="Entry value" optional="true" key="value">
+    <OptionsTablePair label="مقدار ورودی" optional="true" key="value">
       <TextPicker
         value={props.values['value']}
         onUpdate={(value) => {props.onUpdate('value', value)}}
         validator={valueValidator}
         />
       <p className="optionsTable__pair__content__note">
-        If empty, will delete the data entry named in this operation.
+        در صورت خالی بودن, نام داده ورودی در این عملیات پاک خواهد شد.
         <br />
-        Note: The laboratory only supports strings.
+        توجه : این سامانه فقط از رشته ها پشتیبانی میکند.
       </p>
     </OptionsTablePair>,
   ];

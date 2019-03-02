@@ -6,22 +6,22 @@ import PositiveIntPicker from '../FormComponents/PositiveIntPicker.js';
 
 export default function ChangeTrust(props) {
   return [
-    <OptionsTablePair label="Asset" key="asset">
+    <OptionsTablePair label="کالا" key="asset">
       <AssetPicker
         value={props.values['asset']}
         disableNative={true}
         onUpdate={(value) => {props.onUpdate('asset', value)}}
         />
     </OptionsTablePair>,
-    <OptionsTablePair label="Trust Limit" optional="true" key="limit">
+    <OptionsTablePair label="حد اعتماد" optional="true" key="limit">
       <PositiveIntPicker
         value={props.values['limit']}
         onUpdate={(value) => {props.onUpdate('limit', value)}}
         />
       <p className="optionsTable__pair__content__note">
-        Leave empty to default to the max int64.
+        در صورت خالی بودن به طور پیش فرض, بیشترین عدد صحیح ۶۴ بیتی انتخاب میشود.
         <br />
-        Set to 0 to remove the trust line.
+        در صورتی که میخواهید خط اعتماد را حذف کنید, کافی است این مقدار را برابر 0 قرار دهید.
       </p>
     </OptionsTablePair>,
   ];

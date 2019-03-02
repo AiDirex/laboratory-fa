@@ -83,7 +83,7 @@ class Introduction extends React.Component {
             <br/>
             {!isLoggedIn && <div style={{width: 200, margin: 'auto'}}>
               {state.showRegister &&
-              <button className="s-button--min" onClick={() => {dispatch(showRegister())}}>ثبت نام &nbsp;|</button>}
+              <button className="s-bمیدیutton--min" onClick={() => {dispatch(showRegister())}}>ثبت نام &nbsp;|</button>}
               {state.showLogin &&
               <button className="s-button--min" onClick={() => {dispatch(showLogin())}}>ورود</button>}
             </div>}

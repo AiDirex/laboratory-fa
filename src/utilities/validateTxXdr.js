@@ -19,7 +19,7 @@ export default function validateTxXdr(input) {
   } catch (e) {
     return {
       result: 'error',
-      message: 'Unable to parse input XDR into Transaction Envelope',
+      message: 'قادر به تجزیه XDR ورودی به یک بسته تراکنش نیست.',
     };
   }
 }

@@ -23,7 +23,7 @@ export default function AssetPicker(props) {
       onChange={(event) => onUpdate(_.assign({}, props.value, {
         code: event.target.value,
       }))}
-      placeholder="Asset Code"
+      placeholder=" کد کالا"
       className="picker picker--textInput" />
     codePickerError = <PickerError message={codeValidator(value)} />
     inputPicker = <PubKeyPicker
@@ -31,7 +31,7 @@ export default function AssetPicker(props) {
       onUpdate={(issuer) => onUpdate(_.assign({}, props.value, {
         issuer: issuer,
       }))}
-      placeholder="Issuer Account ID"
+      placeholder="شناسه حساب دارایی"
       />
   }
 
@@ -80,8 +80,8 @@ function codeValidator(value) {
   let code = value.code || '';
 
   if (code && !code.match(/^[a-zA-Z0-9]+$/g)) {
-    return 'Asset code must consist of only letters and numbers.';
+    return 'کدکالا فقط باید شامل اعداد و حروف باشد.';
   } else if (code.length < minLength || code.length > maxLength) {
-    return `Asset code must be between ${minLength} and ${maxLength} characters long.`;
+    return `کد کالا باید بین ${minLength} و ${maxLength} باشد. `;
   }
 }

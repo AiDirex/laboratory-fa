@@ -6,13 +6,13 @@ import AmountPicker from '../FormComponents/AmountPicker.js';
 
 export default function CreateAccount(props) {
   return [
-    <OptionsTablePair label="Destination" key="destination">
+    <OptionsTablePair label="مقصد" key="destination">
       <PubKeyPicker
         value={props.values['destination']}
         onUpdate={(value) => {props.onUpdate('destination', value)}}
         />
     </OptionsTablePair>,
-    <OptionsTablePair label="Starting Balance" key="startingBalance">
+    <OptionsTablePair label="موجودی اولیه" key="startingBalance">
       <AmountPicker
         value={props.values['startingBalance']}
         onUpdate={(value) => {props.onUpdate('startingBalance', value)}}

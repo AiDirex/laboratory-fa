@@ -9,9 +9,9 @@ export default function SignerPicker(props) {
   let value = _.extend({type: null, content: '', weight: null}, props.value);
 
   const items = {
-    ed25519PublicKey: "Ed25519 Public Key",
-    sha256Hash: "sha256 Hash",
-    preAuthTx: "Pre-authorized Transaction Hash"
+    ed25519PublicKey: "Ed25519 کلید عمومی",
+    sha256Hash: "sha256 چکیده",
+    preAuthTx: "چکیده تراکنش از قبل تصدیق شده"
   }
 
 
@@ -39,7 +39,7 @@ export default function SignerPicker(props) {
       input = <TextPicker
         value={value.content}
         onUpdate={(content) => onUpdate({content})}
-        placeholder="Accepts a 32-byte hash in hexadecimal format (64 characters)."
+        placeholder=".یک چکیده ۳۲ بایتی به فرمت هگزادسیمال (۶۴ کاراکتر)وارد کنید."
         validator={hashValidator.bind(null, value.content)}
       />;
       break;
@@ -51,7 +51,7 @@ export default function SignerPicker(props) {
         value={value.weight}
         onUpdate={(weight) => {onUpdate({weight})}}
         />
-      <p className="optionsTable__pair__content__note">Signer will be removed from account if this weight is 0.</p>
+      <p className="optionsTable__pair__content__note">در صورتی که این وزن صفر باشد, امضاکننده از حساب حذف خواهد شد.</p>
     </div>
   }
 
@@ -59,7 +59,7 @@ export default function SignerPicker(props) {
     <SelectPicker
       value={value.type}
       onUpdate={(type) => {onUpdate({type})}}
-      placeholder="Select signer type"
+      placeholder="نوع امضا کننده را مشخص کنید."
       items={items}
       className="picker--spaceBottom"
       />

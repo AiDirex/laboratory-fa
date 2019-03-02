@@ -76,7 +76,7 @@ class AccountCreator extends React.Component {
           <button className="s-button"
             disabled={state.friendbotTarget.length === 0}
             onClick={() => dispatch(startFriendbotRequest(state.friendbotTarget))}
-            >Get test network lumens</button>
+            >دریافت لومن های شبکه تست</button>
           {friendbotMessage}
           {friendbotResultCodeblock}
         </div>

@@ -20,13 +20,13 @@ function XdrViewer(props) {
   if (state.input === '') {
     errorMessage = <p>Enter a base-64 encoded XDR blob to decode.</p>;
   } else if (!xdrTypeIsValid) {
-    errorMessage = <p>Please select a XDR type</p>;
+    errorMessage = <p>لطفا یک نوع از فرمت XDR را انتخاب کنید.</p>;
   } else {
     try {
       treeView = <TreeView nodes={extrapolateFromXdr(state.input, state.type)} fetchedSigners={state.fetchedSigners} />
     } catch (e) {
       console.error(e)
-      errorMessage = <p>Unable to decode input as {state.type}</p>;
+      errorMessage = <p> قادر به کدگشایی کردن ورودی به صورت {state.type} نمیباشد.</p>;
     }
   }
 

@@ -23,7 +23,7 @@ export default class TxBuilderResult extends React.Component {
     }
     let memoIsNone = attributes.memoType === 'MEMO_NONE' || attributes.memoType === '';
     if (!memoIsNone && attributes.memoContent === '') {
-      validationErrors.push('Memo content is required if memo type is selected');
+      validationErrors.push(' در صورتی که نوع memo انتخاب شده است باید فیلد متناظر با آن حتما پر شود.');
     }
 
     let finalResult, errorTitleText, successTitleText, signingInstructions, signingLink, xdrLink;

@@ -29,7 +29,7 @@ export default function ManualMultiPicker(props) {
           <button
             className="s-button ManualMultiPicker__item__remove"
             onClick={() => onUpdate(removeValueAt(values, index))}>
-            remove
+            حذف
           </button>
         </div>
 

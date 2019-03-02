@@ -8,43 +8,43 @@ import ManualMultiPicker from '../FormComponents/ManualMultiPicker.js';
 
 export default function PathPayment(props) {
   return [
-    <OptionsTablePair label="Destination" key="destination">
+    <OptionsTablePair label="مقصد" key="destination">
       <PubKeyPicker
         value={props.values['destination']}
         onUpdate={(value) => {props.onUpdate('destination', value)}}
         />
     </OptionsTablePair>,
-    <OptionsTablePair label="Sending Asset" key="sendAsset">
+    <OptionsTablePair label="کالای ارسالی" key="sendAsset">
       <AssetPicker
         value={props.values['sendAsset']}
         onUpdate={(value) => {props.onUpdate('sendAsset', value)}}
         />
-      <p className="optionsTable__pair__content__note">The asset to be deduced from the sender's account</p>
+      <p className="optionsTable__pair__content__note">کالایی که از حساب مبدأ ارسال خواهد شد.</p>
     </OptionsTablePair>,
-    <OptionsTablePair label="Maximum send amount" key="sendMax">
+    <OptionsTablePair label="بیشینه مقدار ارسالی" key="sendMax">
       <AmountPicker
         value={props.values['sendMax']}
         onUpdate={(value) => {props.onUpdate('sendMax', value)}}
         />
-      <p className="optionsTable__pair__content__note">The most the sender is willing to spend to take the paths to. Resulting amount may vary due to the offers in the orderbook.</p>
+      <p className="optionsTable__pair__content__note"> بیشترین مقداری که فرستنده تمایل دارد تا برای ارسال توسط مسیر هزینه کند. مقادیر میتوانند با توجه به پیشنهادات در دفتر سفارشها متفاوت باشانتخاب </p>
     </OptionsTablePair>,
-    <OptionsTablePair label="Intermediate Path" key="path" optional="true">
+    <OptionsTablePair label="مسیر واسطه" key="path" optional="true">
       <ManualMultiPicker
         component={AssetPicker}
         value={props.values['path']}
         default={{}}
-        addNewLabel="Add new intermediate asset"
+        addNewLabel="یک کالای میانی جدید وارد کنید."
         onUpdate={(value) => {props.onUpdate('path', value)}}
         />
     </OptionsTablePair>,
-    <OptionsTablePair label="Destination Asset" key="destAsset">
+    <OptionsTablePair label="کالای مقصد" key="destAsset">
       <AssetPicker
         value={props.values['destAsset']}
         onUpdate={(value) => {props.onUpdate('destAsset', value)}}
         />
-      <p className="optionsTable__pair__content__note">The asset to be received by the destination account</p>
+      <p className="optionsTable__pair__content__note">کالایی که توسط حساب مقصد دریافت خواهد شد.</p>
     </OptionsTablePair>,
-    <OptionsTablePair label="Destination Amount" key="destAmount">
+    <OptionsTablePair label="مقدار مقصد" key="destAmount">
       <AmountPicker
         value={props.values['destAmount']}
         onUpdate={(value) => {props.onUpdate('destAmount', value)}}

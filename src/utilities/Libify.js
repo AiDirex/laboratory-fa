@@ -79,7 +79,7 @@ Libify.Asset = function(opts) {
     return Sdk.Asset.native();
   }
 
-  assertNotEmpty(opts.code, 'Asset requires asset code');
+  assertNotEmpty(opts.code, 'برای کالا, کد کالا ضروری میباشد.');
   return new Sdk.Asset(opts.code, opts.issuer);
 }
 
@@ -109,8 +109,8 @@ Libify.Operation = function(type, opts) {
 }
 
 Libify.Operation.createAccount = function(opts) {
-  assertNotEmpty(opts.destination, 'Create Account operation requires destination');
-  assertNotEmpty(opts.startingBalance, 'Create Account operation requires starting balance');
+  assertNotEmpty(opts.destination, 'برای عملیات ساختن حساب مقصد لازم است.');
+  assertNotEmpty(opts.startingBalance, 'برای عملیات ساختن حساب موجودی اولیه لازم است.');
   return Sdk.Operation.createAccount({
     destination: opts.destination,
     startingBalance: opts.startingBalance,
@@ -119,9 +119,9 @@ Libify.Operation.createAccount = function(opts) {
 }
 
 Libify.Operation.payment = function(opts) {
-  assertNotEmpty(opts.destination, 'Payment operation requires destination');
-  assertNotEmpty(opts.asset, 'Payment operation requires asset');
-  assertNotEmpty(opts.amount, 'Payment operation requires amount');
+  assertNotEmpty(opts.destination,'برای عملیات پرداخت مقصد لازم است.' );
+  assertNotEmpty(opts.asset, 'برای عملیات پرداخت کالا لازم است. ');
+  assertNotEmpty(opts.amount, 'برای عملیات پرداخت مقدار لازم است.');
   return Sdk.Operation.payment({
     destination: opts.destination,
     asset: Libify.Asset(opts.asset),
@@ -156,7 +156,7 @@ Libify.Operation.pathPayment = function(opts) {
 }
 
 Libify.Operation.changeTrust = function(opts) {
-  assertNotEmpty(opts.asset, 'Change Trust operation requires asset');
+  assertNotEmpty(opts.asset, 'برای عملیات تغییر خط اعتماد کالا لازم است.');
   return Sdk.Operation.changeTrust({
     asset: Libify.Asset(opts.asset),
     limit: (opts.limit === '') ? undefined : opts.limit,
@@ -165,9 +165,9 @@ Libify.Operation.changeTrust = function(opts) {
 }
 
 Libify.Operation.allowTrust = function(opts) {
-  assertNotEmpty(opts.trustor, 'Allow Trust operation requires trustor');
-  assertNotEmpty(opts.assetCode, 'Allow Trust operation requires asset code');
-  assertNotEmpty(opts.authorize, 'Allow Trust operation requires authorization setting');
+  assertNotEmpty(opts.trustor, 'ایجاد خط اعتماد به اعتماد نیاز دارد.');
+  assertNotEmpty(opts.assetCode, 'در عملیات ایجاد خط اعتماد کد کالا مورد نیاز است.');
+  assertNotEmpty(opts.authorize, 'عملیات ایجاد خط اعتماد به تنظیمات احراز هویت نیاز دارد.');
   return Sdk.Operation.allowTrust({
     trustor: opts.trustor,
     assetCode: opts.assetCode,
@@ -177,7 +177,7 @@ Libify.Operation.allowTrust = function(opts) {
 }
 
 Libify.Operation.accountMerge = function(opts) {
-  assertNotEmpty(opts.destination, 'Account Merge operation requires destination');
+  assertNotEmpty(opts.destination, 'برای عملیات ادغام اکانت مقصد لازم است.');
   return Sdk.Operation.accountMerge({
     destination: opts.destination,
     source: opts.sourceAccount,
@@ -185,11 +185,11 @@ Libify.Operation.accountMerge = function(opts) {
 }
 
 Libify.Operation.manageOffer = function(opts) {
-  assertNotEmpty(opts.selling, 'Manage Offer operation requires selling asset');
-  assertNotEmpty(opts.buying, 'Manage Offer operation requires buying asset');
-  assertNotEmpty(opts.amount, 'Manage Offer operation requires amount');
-  assertNotEmpty(opts.price, 'Manage Offer operation requires price');
-  assertNotEmpty(opts.offerId, 'Manage Offer operation requires Offer ID');
+  assertNotEmpty(opts.selling, 'برای عملیات میدیریت پیشنهاد به کالای فروشی  نیاز است.');
+  assertNotEmpty(opts.buying, 'برای عملیات مدیریت پیشنهاد به کالایی که قصد خرید آن را داریم نیاز است.');
+  assertNotEmpty(opts.amount, 'برای عملیات مدیریت پیشنهاد به مقدار نیاز است.');
+  assertNotEmpty(opts.price, 'برای عملیات مدیریت پیشنهاد به قیمت نیاز است.');
+  assertNotEmpty(opts.offerId, 'برای عملیات مدیریت پیشنهاد به شناسه پیشنهاد نیاز است.');
   return Sdk.Operation.manageOffer({
     selling: Libify.Asset(opts.selling),
     buying: Libify.Asset(opts.buying),
@@ -201,10 +201,10 @@ Libify.Operation.manageOffer = function(opts) {
 }
 
 Libify.Operation.createPassiveOffer = function(opts) {
-  assertNotEmpty(opts.selling, 'Create Passive Offer operation requires selling asset');
-  assertNotEmpty(opts.buying, 'Create Passive Offer operation requires buying asset');
-  assertNotEmpty(opts.amount, 'Create Passive Offer operation requires amount');
-  assertNotEmpty(opts.price, 'Create Passive Offer operation requires price');
+  assertNotEmpty(opts.selling, 'برای عملیات ساختن پیشنهاد منفعل به کالای فروشی نیاز است.');
+  assertNotEmpty(opts.buying, 'برای عملیات ساختن پیشنهاد منفعل به کالایی که قصد خرید آن را داریم نیاز است.');
+  assertNotEmpty(opts.amount, 'برای عملیات ساختن پیشنهاد منفعل به مقدار نیاز است.');
+  assertNotEmpty(opts.price, 'برای عملیات ساختن پیشنهاد منفعل به قیمت نیاز است.e');
   return Sdk.Operation.createPassiveOffer({
     selling: Libify.Asset(opts.selling),
     buying: Libify.Asset(opts.buying),
@@ -226,10 +226,10 @@ Libify.Operation.setOptions = function(opts) {
     let signerPubKeyEmpty = isEmpty(opts.signer.content);
     let signerWeightEmpty = isEmpty(opts.signer.weight);
     if (signerPubKeyEmpty && !signerWeightEmpty) {
-      throw new Error('Signer weight is required if signer key is present');
+      throw new Error('اگر کلید امضا کننده موجود باشد به وزن امضا کننده نیاز است.');
     }
     if (!signerPubKeyEmpty && signerWeightEmpty) {
-      throw new Error('Signer key is required if signer weight is present');
+      throw new Error('اگر وزن امضا کننده موجود باشد به کلید امضا کننده نیاز است. ');
     }
 
     if (!signerPubKeyEmpty && !signerWeightEmpty) {
@@ -248,16 +248,16 @@ Libify.Operation.setOptions = function(opts) {
           throw new Error('نوع امضا کننده نامعتبر است.');
       }
     } else {
-      throw new Error('Enter signer key and weight');
+      throw new Error('کلید و وزن امضا کننده را وارد کنید.');
     }
   }
 
   assertIntOrEmpty(opts.clearFlags, 'Clear flags must be an integer');
   assertIntOrEmpty(opts.setFlags, 'Set flags must be an integer');
   assertIntOrEmpty(opts.masterWeight, 'Master Weight must be an integer');
-  assertIntOrEmpty(opts.lowThreshold, 'Low Threshold must be an integer');
-  assertIntOrEmpty(opts.medThreshold, 'Medium Threshold must be an integer');
-  assertIntOrEmpty(opts.highThreshold, 'High Threshold must be an integer');
+  assertIntOrEmpty(opts.lowThreshold, 'آستانه پایین باید عدد صحیح باشد.');
+  assertIntOrEmpty(opts.medThreshold, 'آستانه متوسط باید عدد صحیح باشد.');
+  assertIntOrEmpty(opts.highThreshold, 'آستانه بالا باید عدد صحیح باشد.');
 
   return Sdk.Operation.setOptions({
     inflationDest: opts.inflationDest,
@@ -284,7 +284,7 @@ Libify.Operation.manageData = function(opts) {
 }
 
 Libify.Operation.bumpSequence = function(opts) {
-  assertNotEmpty(opts.bumpTo, 'Sequence number should be set');
+  assertNotEmpty(opts.bumpTo, 'شماره تنظیم باید تنظیم شود.');
   return Sdk.Operation.bumpSequence({
     bumpTo: opts.bumpTo,
     source: opts.sourceAccount,
@@ -411,7 +411,7 @@ Libify.signTransaction = function(txXdr, signers, networkObj, ledgerWalletSigs) 
 
   if (addedSigs < 1) {
     return {
-      message: 'Enter a secret key to sign message'
+      message: 'یک کلید خصوصی برای امضا کردن پیام وارد کنید.'
     }
   }
 

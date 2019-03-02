@@ -1,4 +1,4 @@
-let errorMessage = 'Unable to parse values passed in url query parameters';
+let errorMessage = 'قادر به تجزیه مقادیر وارد شده برای پارامترهای پرسیده شده در url نیست.';
 
 export const rehydrate = function(obj) {
   try {

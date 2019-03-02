@@ -40,7 +40,7 @@ function ResultPane(body) {
   return <div className="EndpointResult">
     <div>
       <div className="EndpointResult__tabs">
-        <button className="EndpointResult__tabs__tab is-current">JSON Response</button>
+        <button className="EndpointResult__tabs__tab is-current">پاسخ JSON</button>
       </div>
       <div className='EndpointResult__content'>
         {BodyContent(body)}

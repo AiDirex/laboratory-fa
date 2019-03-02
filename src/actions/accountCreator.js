@@ -45,7 +45,7 @@ export function startFriendbotRequest(target) {
         let code, message;
         if (e.status === 0) {
           code = '';
-          message = 'Unable to reach Friendbot server at https://friendbot.stellar.org';
+          message = 'قادر به دسترسی به سرور Freindbot در آدرس https://friendbot.stellar.org نیست.';
         } else {
           code = JSON.stringify(e.data, null, 2);
           message = `Failed to fund ${target} on the test network`;

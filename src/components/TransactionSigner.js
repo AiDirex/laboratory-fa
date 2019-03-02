@@ -69,10 +69,10 @@ class TransactionSigner extends React.Component {
           className="s-button TxSignerResult__submit"
           href={xdrViewer(result.xdr, 'TransactionEnvelope')}
           onClick={scrollOnAnchorOpen}
-          >View in XDR Viewer</a>;
+          >در بخش نمایش دهنده XDR نشان داده شود.</a>;
         resultTitle = <h3 className="TxSignerResult__title">Transaction signed!</h3>;
         submitInstructions = <p className="TxSignerResult__instructions">
-          Now that this transaction is signed, you can submit it to the network. Horizon provides an endpoint called Post Transaction that will relay your transaction to the network and inform you of the result.
+          اکن.ن تراکنش شما امضا شده و شما میتوانید آن را در شبکه ارسال و ثبت کنید.نتایج به شما اعلام خواهد شد.
         </p>
       }
 

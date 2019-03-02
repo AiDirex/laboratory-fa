@@ -10,20 +10,20 @@ import Unsigned8bitIntPicker from '../FormComponents/Unsigned8bitIntPicker';
 import HelpMark from '../HelpMark';
 
 const accountFlagFieldsSet = {
-  1: 'Authorization required',
-  2: 'Authorization revocable',
-  4: 'Authorization immutable',
+  1: 'الزامی بودن مجوز',
+  2: 'لغو مجوز',
+  4: 'تغییر ناپذیر بودن مجوز',
 };
 
 const accountFlagFieldsClear = {
-  1: 'Authorization required',
-  2: 'Authorization revocable',
+  1: 'الزامی بودن مجوز',
+  2: 'لغو مجوز',
 };
 
 export default function SetOptions(props) {
   return [
     <OptionsTablePair
-      label={<span>Inflation Destination <HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#inflation-destination" /></span>}
+      label={<span>مقصد تورم <HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#inflation-destination" /></span>}
       optional={true} key="inflationDest">
       <PubKeyPicker
         value={props.values['inflationDest']}
@@ -31,27 +31,27 @@ export default function SetOptions(props) {
         />
     </OptionsTablePair>,
     <OptionsTablePair
-      label={<span>Set Flags <HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#flags" /></span>}
+      label={<span>انتخاب مجوزها <HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#flags" /></span>}
       optional={true} key="setFlags">
       <FlagfieldPicker
         value={props.values['setFlags']}
         items={accountFlagFieldsSet}
         onUpdate={(value) => {props.onUpdate('setFlags', value)}}
         />
-      <p className="optionsTable__pair__content__note">Selected <a href="https://en.wikipedia.org/wiki/Flag_field" target="_blank">flags</a> mean to add selected flags in addition to flags already present on the account.</p>
+      <p className="optionsTable__pair__content__note"><a href="https://en.wikipedia.org/wiki/Flag_field" target="_blank">پرچمهای </a>انتخاب شده به این معنا میباشند که به پرچمهایی که در حال حاضر در حساب کاربری موجود هستند اضافه خواهند شد. </p>
     </OptionsTablePair>,
     <OptionsTablePair
-      label={<span>Clear Flags <HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#flags" /></span>}
+      label={<span>پاک کردن مجوزها <HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#flags" /></span>}
       optional={true} key="clearFlags">
       <FlagfieldPicker
         value={props.values['clearFlags']}
         items={accountFlagFieldsClear}
         onUpdate={(value) => {props.onUpdate('clearFlags', value)}}
         />
-      <p className="optionsTable__pair__content__note">Selected <a href="https://en.wikipedia.org/wiki/Flag_field" target="_blank">flags</a> mean to remove selected flags already present on the account.</p>
+      <p className="optionsTable__pair__content__note"> <a href="https://en.wikipedia.org/wiki/Flag_field" target="_blank">پرچمهای </a>انتخاب شده به این معنا میباشند که این پرچمها در حال حاضر در این حساب وجود دارند.</p>
     </OptionsTablePair>,
     <OptionsTablePair
-      label={<span>Master Weight <HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#thresholds" /></span>}
+      label={<span>وزن حساب اصلی <HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#thresholds" /></span>}
       optional={true} key="masterWeight">
       <Unsigned8bitIntPicker
         value={props.values['masterWeight']}
@@ -59,7 +59,7 @@ export default function SetOptions(props) {
         />
     </OptionsTablePair>,
     <OptionsTablePair
-      label={<span>Low Threshold <HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#thresholds" /></span>}
+      label={<span>آستانه پایین<HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#thresholds" /></span>}
       optional={true} key="lowThreshold">
       <Unsigned8bitIntPicker
         value={props.values['lowThreshold']}
@@ -67,7 +67,7 @@ export default function SetOptions(props) {
         />
     </OptionsTablePair>,
     <OptionsTablePair
-      label={<span>Medium Threshold <HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#thresholds" /></span>}
+      label={<span>آستانه میانه <HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#thresholds" /></span>}
       optional={true} key="medThreshold">
       <Unsigned8bitIntPicker
         value={props.values['medThreshold']}
@@ -75,7 +75,7 @@ export default function SetOptions(props) {
         />
     </OptionsTablePair>,
     <OptionsTablePair
-      label={<span>High Threshold <HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#thresholds" /></span>}
+      label={<span>آستانه بالا <HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#thresholds" /></span>}
       optional={true} key="highThreshold">
       <Unsigned8bitIntPicker
         value={props.values['highThreshold']}
@@ -83,7 +83,7 @@ export default function SetOptions(props) {
         />
     </OptionsTablePair>,
     <OptionsTablePair
-      label={<span>Signer Type <HelpMark href="https://www.stellar.org/developers/learn/concepts/multi-sig.html#additional-signing-keys" /></span>}
+      label={<span>نوع امضا کننده <HelpMark href="https://www.stellar.org/developers/learn/concepts/multi-sig.html#additional-signing-keys" /></span>}
       optional={true} key="signer">
       <SignerPicker
         value={props.values['signer']}
@@ -92,7 +92,7 @@ export default function SetOptions(props) {
       <p className="optionsTable__pair__content__note">برای حذف/اضافه و یا تنظیم وزن امضاکنندگان حساب استفاده میشود.</p>
     </OptionsTablePair>,
     <OptionsTablePair
-      label={<span>Home Domain <HelpMark href="https://www.stellar.org/developers/learn/concepts/multi-sig.html#additional-signing-keys" /></span>}
+      label={<span>دامنه <HelpMark href="https://www.stellar.org/developers/learn/concepts/multi-sig.html#additional-signing-keys" /></span>}
       optional={true} key="homeDomain">
       <TextPicker
         value={props.values['homeDomain']}

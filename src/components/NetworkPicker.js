@@ -38,7 +38,7 @@ class NetworkPicker extends React.Component {
               <button className="s-button"
                 disabled={false}
                 onClick={() => dispatch(setCustomParams(modal.values))}
-                >Use network</button>
+                >از شبکه استفاده کنید.</button>
             </div>
           </div>
         </div> : null

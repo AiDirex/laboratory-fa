@@ -45,7 +45,7 @@ let operation = (ops, index, dispatch) => {
 
     helpNote = <p className="optionsTable__pair__content__note">{opConfig.helpNote}</p>;
     docsLink = <p className="optionsTable__pair__content__note">
-      <a href={opConfig.docsUrl} target="_blank">See documentation for {opConfig.label}</a>
+      <a href={opConfig.docsUrl} target="_blank">برای مطالعه بیشتر در مورد {opConfig.label} کلیک کنید. </a>
     </p>;
 
     sourceAccountRow = <OptionsTablePair label=" حساب مبدا" optional={true} key="sourceAccount">
@@ -61,7 +61,7 @@ let operation = (ops, index, dispatch) => {
   let removeLink;
   if (ops.length > 1) {
     removeLink = <p className="TransactionOpMeta__remove">
-      <a onClick={() => dispatch(removeOperation(op.id))}>remove</a>
+      <a onClick={() => dispatch(removeOperation(op.id))}>حذف</a>
     </p>;
   }
 

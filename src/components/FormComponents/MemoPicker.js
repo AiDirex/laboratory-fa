@@ -51,7 +51,7 @@ function contentValidator(value) {
     break;
   case 'MEMO_ID':
     if (!value.content.match(/^[0-9]*$/g) || value < 0) {
-      return 'MEMO_ID accepts a positive integer.';
+      return 'برای شناسه memo یک عدد صحیح مثبت قابل قبول است.';
     }
     if (value.content !== UnsignedHyper.fromString(value.content).toString()) {
       return `MEMO_ID is an unsigned 64-bit integer and the max valid
