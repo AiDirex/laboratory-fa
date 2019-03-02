@@ -133,7 +133,7 @@ export const endpointsMap = {
         'path': {
           template: '/accounts/{account_id}/offers{?cursor,limit,order}',
         },
-        'fields': [{name: 'records', fields: ['seller','id','amount', 'price','selling'], array: true}],
+        'fields': [{name: 'records', fields: ['seller','id','amount', 'price'], array: true}],
         'setupComponent': require('../components/SetupPanes/ForAccount'),
       }
     }
