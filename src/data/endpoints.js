@@ -133,7 +133,7 @@ export const endpointsMap = {
         'path': {
           template: '/accounts/{account_id}/offers{?cursor,limit,order}',
         },
-        'fields': [{name: 'records', fields: ['seller','id'], array: true}],
+        'fields': [{name: 'records', fields: ['seller','id','amount', 'price','selling'], array: true}],
         'setupComponent': require('../components/SetupPanes/ForAccount'),
       }
     }
@@ -194,7 +194,7 @@ export const endpointsMap = {
     }
   },
   'order_book': {
-    'label': 'سفارش‌ها',
+    'label': 'دفتر سفارش‌ها',
     'endpoints': {
       'details': {
         'label': 'جزییات',
