@@ -45,6 +45,7 @@ function general (state = defaultGeneralState, action) {
       msg: null,
       showError: true,
       errorMsg: action.errorMsg,
+      errors: action.errors
     })
   }
   if (action.type === OFFER_REQ_SUCCESS) {

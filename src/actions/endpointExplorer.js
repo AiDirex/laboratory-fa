@@ -72,7 +72,8 @@ export function submitRequest(request) {
             type: ERROR_REQUEST,
             id,
             errorStatus: e.status,
-            body: e.data,
+            isError: true,
+            body: e.response.data,
           })
         });
     }

@@ -9,6 +9,7 @@ import { loginRequest, registerRequest, showLogin, showRegister } from '../actio
 import { ResultTable } from './SetupPanes/ResultTable'
 import { logoutUser, setUser } from '../actions/user'
 import classNames from 'classnames'
+import { ErrorList } from './FormComponents/ErrorList'
 
 class Introduction extends React.Component {
 
@@ -89,6 +90,7 @@ class Introduction extends React.Component {
             </div>}
             {state.showError && <p>{state.errorMsg}</p>}
             {state.showMsg && <p>{state.msg}</p>}
+            {state.errors && <ErrorList errors={state.errors} />}
             {state.mode === 'register' &&
             <div>
               <OptionsTablePair label="نام" key="firstName">

@@ -1,42 +1,42 @@
-import React from 'react';
-import {any} from 'lodash'
-import {CodeBlock} from './CodeBlock';
+import React from 'react'
+import { any } from 'lodash'
+import { CodeBlock } from './CodeBlock'
 
 export class EndpointResult extends React.Component {
-  render() {
-    let {id, available, isError, body} = this.props;
+  render () {
+    let {id, available, isError, body} = this.props
 
     if (!available) {
-      return null;
+      return null
     }
 
     if (isError) {
-      return ErrorPane(body);
+      return ErrorPane(body)
     }
 
     if (body.length === 0) {
-      return <LoadingPane />;
+      return <LoadingPane/>
     }
 
-    return ResultPane(body);
+    return ResultPane(body)
   }
 }
 
-function LoadingPane(props) {
+function LoadingPane (props) {
   return <div className="EndpointResult">
     <div className="EndpointResult__loading">Loading...</div>
   </div>
 }
 
-function ErrorPane(body) {
+function ErrorPane (body) {
   return <div className="EndpointResult">
     <div className='EndpointResult__error'>
       {BodyContent(body)}
     </div>
-  </div>;
+  </div>
 }
 
-function ResultPane(body) {
+function ResultPane (body) {
   return <div className="EndpointResult">
     <div>
       <div className="EndpointResult__tabs">
@@ -46,11 +46,11 @@ function ResultPane(body) {
         {BodyContent(body)}
       </div>
     </div>
-  </div>;
+  </div>
 }
 
-function BodyContent(body) {
+function BodyContent (body) {
   return _.map(body, (bodyEntry, index) => {
-    return <CodeBlock key={index} code={body[index]} language="json" />
-  });
+    return body && body[index] && <CodeBlock key={index} code={body[index]} language="json"/>
+  })
 }

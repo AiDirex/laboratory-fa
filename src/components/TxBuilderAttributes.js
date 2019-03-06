@@ -96,6 +96,7 @@ class sequenceFetcherClass extends React.Component {
 let SequenceFetcher = connect(chooseState)(sequenceFetcherClass);
 function chooseState(state) {
   return {
+    user: state.user,
     state: state.transactionBuilder,
     horizonURL: state.network.current.horizonURL,
   }

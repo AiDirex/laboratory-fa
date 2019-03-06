@@ -44,6 +44,7 @@ const defaultRequestState = {
   showKeypair: false,
   keypairFields: [],
   keypair: null,
+  errors: null
 }
 function reducer(state = defaultRequestState, action) {
   if (action.type === SHOW_LOGIN) {
@@ -62,6 +63,7 @@ function reducer(state = defaultRequestState, action) {
       showError: true,
       errorMsg: action.errorMsg,
       showMsg: false,
+      errors: action.errors
     });
   }
   if (action.type === LOGIN_SUCCESS) {
@@ -77,7 +79,8 @@ function reducer(state = defaultRequestState, action) {
   if (action.type === REGISTER_ERR) {
     return _.assign({}, state, {
       showError: true,
-      errorMsg: action.errorMsg
+      errorMsg: action.errorMsg,
+      errors: action.errors
     });
   }
   if (action.type === REGISTER_SUCCESS) {

@@ -4,6 +4,7 @@ import { Keypair } from 'stellar-sdk'
 import NETWORK from '../constants/network'
 import { generateNewKeypair } from './accountCreator'
 import { setUser } from './user'
+import { getErrorFromResponse } from '../utilities/getErrorFromResponse'
 
 // export const GENERATE_NEW_KEYPAIR = 'GENERATE_NEW_KEYPAIR';
 // export function generateNewKeypair() {
@@ -15,15 +16,17 @@ import { setUser } from './user'
 //   }
 // }
 
-export const SHOW_REGISTER = 'SHOW_REGISTER';
-export function showRegister() {
+export const SHOW_REGISTER = 'SHOW_REGISTER'
+
+export function showRegister () {
   return {
     type: SHOW_REGISTER
   }
 }
 
-export const SHOW_LOGIN = 'SHOW_LOGIN';
-export function showLogin() {
+export const SHOW_LOGIN = 'SHOW_LOGIN'
+
+export function showLogin () {
   return {
     type: SHOW_LOGIN
   }
@@ -31,6 +34,7 @@ export function showLogin() {
 
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 export const REGISTER_ERR = 'REGISTER_ERR'
+
 export function registerRequest (user) {
   return (dispatch) => {
     // dispatch({
@@ -57,7 +61,8 @@ export function registerRequest (user) {
     }).catch(e => {
       dispatchInNewStack(dispatch, {
         type: REGISTER_ERR,
-        errorMsg: 'Error'
+        errorMsg: 'خطا رخ داد.',
+        errors: getErrorFromResponse(e)
       })
     })
   }
@@ -65,6 +70,7 @@ export function registerRequest (user) {
 
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_ERR = 'LOGIN_ERR'
+
 export function loginRequest (auth) {
   return dispatch => {
     // dispatch({
@@ -95,7 +101,8 @@ export function loginRequest (auth) {
     }).catch(e => {
       dispatchInNewStack(dispatch, {
         type: LOGIN_ERR,
-        errorMsg: 'Error'
+        errorMsg: 'خطا رخ داد.',
+        errors: getErrorFromResponse(e)
       })
     })
   }

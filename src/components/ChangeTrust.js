@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import TextPicker from './FormComponents/TextPicker'
 import OptionsTablePair from './OptionsTable/Pair'
 import { sendChangeTrust, setForm } from '../actions/changeTrust'
+import { ErrorList } from './FormComponents/ErrorList'
 
 class ChangeTrust extends React.Component {
 
@@ -19,11 +20,11 @@ class ChangeTrust extends React.Component {
         <div className="so-chunk">
           <div className="Introduction__container">
             <h2>ایجاد خط اعتماد</h2>
-            <p></p>
           </div>
           {isLoggedIn && <div>
             {general.showError && <p>{general.errorMsg}</p>}
             {general.showMsg && <p>{general.msg}</p>}
+            {general.errors && <ErrorList errors={general.errors} />}
             <div>
               <OptionsTablePair label="کلید خصوصی" key="source">
                 <TextPicker value={form.source} onUpdate={(v) => {dispatch(setForm('source', v))}}/>

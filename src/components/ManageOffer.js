@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import TextPicker from './FormComponents/TextPicker'
 import OptionsTablePair from './OptionsTable/Pair'
 import { sendOffer, setForm } from '../actions/manageOffer'
+import { ErrorList } from './FormComponents/ErrorList'
 
 class ManageOffer extends React.Component {
 
@@ -24,6 +25,7 @@ class ManageOffer extends React.Component {
           {isLoggedIn && <div>
             {general.showError && <p>{general.errorMsg}</p>}
             {general.showMsg && <p>{general.msg}</p>}
+            {general.errors && <ErrorList errors={general.errors} />}
             <div>
               <h3>خرید</h3>
               <OptionsTablePair label="کد دارایی برای خرید" key="buying_asset_code">

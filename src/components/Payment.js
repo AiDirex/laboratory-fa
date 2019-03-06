@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import TextPicker from './FormComponents/TextPicker'
 import OptionsTablePair from './OptionsTable/Pair'
 import { sendPayment, setForm } from '../actions/payment'
+import { ErrorList } from './FormComponents/ErrorList'
 
 class Payment extends React.Component {
 
@@ -19,11 +20,11 @@ class Payment extends React.Component {
         <div className="so-chunk">
           <div className="Introduction__container">
             <h2>پرداخت</h2>
-            <p></p>
           </div>
           {isLoggedIn && <div>
             {general.showError && <p>{general.errorMsg}</p>}
             {general.showMsg && <p>{general.msg}</p>}
+            {general.errors && <ErrorList errors={general.errors} />}
             <div>
               <OptionsTablePair label="شناسه پرداخت (اختیاری)" key="id">
                 <TextPicker value={form.id} onUpdate={(v) => {dispatch(setForm('id', v))}}/>
@@ -40,7 +41,7 @@ class Payment extends React.Component {
               <OptionsTablePair label="کد دارایی" key="asset_code">
                 <TextPicker onUpdate={(v) => {dispatch(setForm('asset_code', v))}} placeholder="XLM"/>
               </OptionsTablePair>
-              {form.asset_code.toLowerCase() !== 'xlm' &&
+              {(form.asset_code === null || form.asset_code === undefined || (form.asset_code.trim() !== '' && form.asset_code.toLowerCase() !== 'xlm')) &&
               <OptionsTablePair label="آدرس منتشر کننده دارایی" key="asset_issuer">
                 <TextPicker onUpdate={(v) => {dispatch(setForm('asset_issuer', v))}}/>
               </OptionsTablePair>}

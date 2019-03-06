@@ -1,6 +1,7 @@
 import axios from 'axios'
 import dispatchInNewStack from '../utilities/dispatchInNewStack'
 import NETWORK from '../constants/network'
+import { getErrorFromResponse } from '../utilities/getErrorFromResponse'
 
 
 
@@ -32,7 +33,8 @@ export function sendChangeTrust (data) {
     }).catch(e => {
       dispatchInNewStack(dispatch, {
         type: TRUST_ERR,
-        errorMsg: 'خطا رخ داد.'
+        errorMsg: 'خطا رخ داد.',
+        errors: getErrorFromResponse(e)
       })
     })
   }

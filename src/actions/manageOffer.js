@@ -1,6 +1,7 @@
 import axios from 'axios'
 import dispatchInNewStack from '../utilities/dispatchInNewStack'
 import NETWORK from '../constants/network'
+import { getErrorFromResponse } from '../utilities/getErrorFromResponse'
 
 
 
@@ -38,7 +39,8 @@ export function sendOffer (data) {
     }).catch(e => {
       dispatchInNewStack(dispatch, {
         type: OFFER_REQ_ERR,
-        errorMsg: 'خطا رخ داد.'
+        errorMsg: 'خطا رخ داد.',
+        errors: getErrorFromResponse(e)
       })
     })
   }

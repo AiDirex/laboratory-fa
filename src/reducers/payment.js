@@ -8,7 +8,7 @@ import _ from 'lodash'
 const defaultFormState = {
   id: null,
   amount: null,
-  asset_code: 'XLM',
+  asset_code: '',
   asset_issuer: null,
   destination: null,
   source: null
@@ -43,6 +43,7 @@ function general (state = defaultGeneralState, action) {
       msg: null,
       showError: true,
       errorMsg: action.errorMsg,
+      errors: action.errors
     })
   }
   if (action.type === PAY_SUCCESS) {
