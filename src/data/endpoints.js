@@ -209,7 +209,8 @@ export const endpointsMap = {
           'buying_asset_code': 'buying_asset.code',
           'buying_asset_issuer': 'busource ying_asset.issuer',
         },
-        'fields': ['base', 'counter'],
+        'fields': [{name: 'bids', fields: ['price', 'amount'], array: true},
+          {name: 'asks', fields: ['price', 'amount'], array: true}],
         'setupComponent': require('../components/SetupPanes/OrderBookDetails'),
       }
     }
