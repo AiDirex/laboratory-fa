@@ -319,7 +319,7 @@ export const endpointsMap = {
           'counter_asset_issuer': 'counter_asset.issuer',
           'offer_id': 'offer_id'
         },
-        'fields': [{name: 'records', fields: ['ledger_close_time','base_account','base_ammount','base_asset_type','counter_account','counter_ammount','counter_asset_type','counter_asset_code','counter_asset_issue'], array: true}],
+        'fields': [{name: 'records', fields: ['ledger_close_time','base_account','base_ammount','base_asset_type','counter_account','counter_amount','counter_asset_type','counter_asset_code','counter_asset_issue'], array: true}],
 
         'setupComponent': require('../components/SetupPanes/Trades'),
       },
@@ -365,7 +365,7 @@ export const endpointsMap = {
         'path': {
           template: '/transactions/{transaction}',
         },
-        'fields': ['account','account_sequence','hash','ledger','result_xdr'],
+        'fields': ['account','account_sequence','hash','ledger','envelope_xdr'],
         'setupComponent': require('../components/SetupPanes/SingleTransaction'),
       },
       'create': {
@@ -376,7 +376,7 @@ export const endpointsMap = {
         'path': {
           template: '/transactions',
         },
-        'fields': ['hash','ledger','result_xdr'],
+        'fields': ['hash','ledger','envelope_xdr'],
         'setupComponent': require('../components/SetupPanes/PostTransaction'),
       },
       'for_account': {
@@ -386,7 +386,7 @@ export const endpointsMap = {
         'path': {
           template: '/accounts/{account_id}/transactions{?cursor,limit,order}',
         },
-        'fields': ['account','account_sequence','hash','ledger','result_xdr'],
+        'fields': ['account','account_sequence','hash','ledger','envelope_xdr'],
         'setupComponent': require('../components/SetupPanes/ForAccount'),
       },
       'for_ledger': {
