@@ -131,15 +131,15 @@ Libify.Operation.payment = function(opts) {
 }
 
 Libify.Operation.pathPayment = function(opts) {
-  assertNotEmpty(opts.sendAsset, 'Path Payment operation requires sending asset');
-  assertNotEmpty(opts.sendMax, 'Path Payment operation requires max send');
-  assertNotEmpty(opts.destination, 'Payment operation requires destination');
-  assertNotEmpty(opts.destAsset, 'Path Payment operation requires destination asset');
-  assertNotEmpty(opts.destAmount, 'Path Payment operation requires the destination amount');
+  assertNotEmpty(opts.sendAsset, 'عملیات مسیر پرداخت نیازمند وارد کردن دارایی فروش است.');
+  assertNotEmpty(opts.sendMax, 'عملیات مسیر پرداخت نیازمند وارد کردن ماکسیمم فروش است.');
+  assertNotEmpty(opts.destination, 'عملیات مسیر پرداخت نیازمند وارد کردن مقصد است.');
+  assertNotEmpty(opts.destAsset, 'عملیات مسیر پرداخت نیازمند وارد کردن دارایی مقصد است.');
+  assertNotEmpty(opts.destAmount, 'عملیات مسیر پرداخت نیازمند وارد کردن مقدار مقصد است.');
 
   let libifiedPath = _.map(opts.path, (hopAsset) => {
     if (_.isUndefined(hopAsset.type)) {
-      throw new Error('All assets in path must be filled out');
+      throw new Error('تمام دارایی های مسیر باید مشمول شوند.');
     }
     return Libify.Asset(hopAsset);
   })
@@ -252,9 +252,9 @@ Libify.Operation.setOptions = function(opts) {
     }
   }
 
-  assertIntOrEmpty(opts.clearFlags, 'Clear flags must be an integer');
-  assertIntOrEmpty(opts.setFlags, 'Set flags must be an integer');
-  assertIntOrEmpty(opts.masterWeight, 'Master Weight must be an integer');
+  assertIntOrEmpty(opts.clearFlags, 'یک عدد صحیح وارد کنید.');
+  assertIntOrEmpty(opts.setFlags, 'یک عدد صحیح وارد کنید.');
+  assertIntOrEmpty(opts.masterWeight, '     وزن اصلی باید یک عدد صحیح باشد.');
   assertIntOrEmpty(opts.lowThreshold, 'آستانه پایین باید عدد صحیح باشد.');
   assertIntOrEmpty(opts.medThreshold, 'آستانه متوسط باید عدد صحیح باشد.');
   assertIntOrEmpty(opts.highThreshold, 'آستانه بالا باید عدد صحیح باشد.');
@@ -274,7 +274,7 @@ Libify.Operation.setOptions = function(opts) {
 }
 
 Libify.Operation.manageData = function(opts) {
-  assertNotEmpty(opts.name, 'Manage Data operation requires entry name');
+  assertNotEmpty(opts.name, 'عملیات مدیریت داده، نیاز به وارد کردن نام ورودی دارد.');
 
   return Sdk.Operation.manageData({
     name: opts.name,
@@ -417,7 +417,7 @@ Libify.signTransaction = function(txXdr, signers, networkObj, ledgerWalletSigs) 
 
   return {
     xdr: newTx.toEnvelope().toXDR('base64'),
-    message: `${addedSigs} signature(s) added; ${existingSigs + addedSigs} signature(s) total`,
+    message: `${addedSigs}  :تعداد امضاهای اضافه شده ; ${existingSigs + addedSigs} :تعداد کل امضاها`,
   };
 }
 

@@ -54,7 +54,7 @@ export function registerRequest (user) {
 
       dispatchInNewStack(dispatch, {
         type: REGISTER_SUCCESS,
-        msg: 'ثبت شد.',
+        msg:'ثبت نام شما با موفقیت انجام شد.  لطفا کلید خصوصی خود را در جای امن نگهداری کنید.  توجه داشته باشید که امکان بازیابی کلید خصوصی وجود ندارد.' ,
         keypairFields: ['pubKey', 'secretKey'],
         keypair: keyPair,
       })

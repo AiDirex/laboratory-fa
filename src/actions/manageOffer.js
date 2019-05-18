@@ -34,7 +34,7 @@ export function sendOffer (data) {
       console.log(response)
       dispatchInNewStack(dispatch, {
         type: OFFER_REQ_SUCCESS,
-        msg: 'ارسال شد.',
+        msg: 'تراکنش شما با موفقیت انجام شد.',
       })
     }).catch(e => {
       dispatchInNewStack(dispatch, {

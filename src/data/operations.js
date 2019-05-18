@@ -32,14 +32,14 @@ export const operationsMap = [
     name: 'pathPayment',
     label: 'مسیر پرداخت',
     operationPane: require('../components/OperationPanes/PathPayment'),
-    helpNote: 'این بخش مقداری از کالای مشخص شده را توسط مسیری از پیشنهادها به حساب مقصد ارسال میکند.این بخش اجازه میدهد کالای ارسالی با کالای دریافتی متفاوت باشد.',
+    helpNote: 'این بخش مقداری از کالای مشخص شده را توسط مسیری از پیشنهادها به حساب مقصد ارسال میکند. این بخش    اجازه میدهد کالای ارسالی با کالای دریافتی متفاوت باشد.',
     docsUrl: 'https://www.stellar.org/developers/learn/concepts/list-of-operations.html#path-payment',
   },
   {
     name: 'manageOffer',
     label: 'مدیریت پیشنهاد',
     operationPane: require('../components/OperationPanes/ManageOffer'),
-    helpNote: 'این بخش برای ساختن,به روز رسانی و یا پاک کردن پیشنهاد میباشد.',
+    helpNote: 'این بخش برای ساختن، به روز رسانی و/یا پاک کردن پیشنهاد میباشد.',
     docsUrl: 'https://www.stellar.org/developers/learn/concepts/list-of-operations.html#manage-offer',
   },
   {
@@ -74,7 +74,7 @@ export const operationsMap = [
     name: 'accountMerge',
     label: 'ادغام اکانت',
     operationPane: require('../components/OperationPanes/AccountMerge'),
-    helpNote: ' .این بخش مقداری از ارز اصلی (XLM) که در حساب موجود میباشد را به یک حساب دیگر فرستاده و حساب مبدأ را از دفترکل پاک میکند.',
+    helpNote: 'این بخش مقداری از ارز اصلی (XLM) که در حساب موجود میباشد را به یک حساب دیگر فرستاده و حساب مبدأ را از دفترکل پاک میکند.',
     docsUrl: 'https://www.stellar.org/developers/learn/concepts/list-of-operations.html#account-merge',
   },
   {
@@ -88,7 +88,7 @@ export const operationsMap = [
     name: 'manageData',
     label: 'مدیریت داده',
     operationPane: require('../components/OperationPanes/ManageData'),
-    helpNote: 'این بخش یک داده ورودی(نام/مقدار) را مقداردهی,تغییر و یا پاک میکند.',
+    helpNote: 'این بخش یک داده ورودی(نام/مقدار) را مقداردهی، تغییر و یا پاک میکند.',
     docsUrl: 'https://www.stellar.org/developers/learn/concepts/list-of-operations.html#manage-data',
   },
   {

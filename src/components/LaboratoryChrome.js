@@ -45,7 +45,7 @@ function LaboratoryChrome(props) {
     <div className="so-back LaboratoryChrome__siteNavBack">
       <div className="so-chunk">
         <nav className="s-buttonList">
-          {tabItem('معرفی', SLUG.HOME)}
+          {tabItem('خانه', SLUG.HOME)}
           {/*{!isLoggedIn && tabItem('ساختن کیف پول', SLUG.ACCOUNT_CREATOR)}*/}
           {isLoggedIn && tabItem('جستجوگر', SLUG.EXPLORER)}
           {isLoggedIn && tabItem('ایجاد خط اعتماد', SLUG.CHANGE_TRUST)}

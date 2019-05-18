@@ -13,7 +13,7 @@ export default function ManageOffer(props) {
         value={props.values['offerId']}
         onUpdate={(value) => {props.onUpdate('offerId', value)}}
         />
-      <p className="optionsTable__pair__content__note">در صورتی که عدد 0 وارد شود, یک پیشنهاد جدید ساخته خواهد شد.</p>
+      <p className="optionsTable__pair__content__note">در صورتی که عدد 0 وارد شود، یک پیشنهاد جدید ساخته خواهد شد.</p>
     </OptionsTablePair>
   );
 }

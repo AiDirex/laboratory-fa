@@ -36,7 +36,7 @@ export const endpointsMap = {
         'helpUrl': 'https://www.stellar.org/developers/horizon/reference/endpoints/assets-all.html',
         'method': 'GET',
         'path': {
-          template: '/assets{?asset_code,asset_issuer,cursor,order,limit}',
+          template: '/assets{?asset_code,asset_issuer,cursor,limit,order}',
         },
         'fields': [{name: 'records', fields: ['amount','asset_code', 'asset_issuer'], array: true}],
         'setupComponent': require('../components/SetupPanes/AllAssets'),

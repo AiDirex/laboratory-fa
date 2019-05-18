@@ -58,7 +58,7 @@ export function sendPayment (data) {
       console.log(response)
       dispatchInNewStack(dispatch, {
         type: PAY_SUCCESS,
-        msg: 'ارسال شد.',
+        msg: 'تراکنش شما با موفقیت انجام شد.',
       })
     }).catch(e => {
       dispatchInNewStack(dispatch, {

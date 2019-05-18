@@ -39,11 +39,10 @@ export default class TxBuilderResult extends React.Component {
       } else {
         successTitleText = `تراکنش با موفقیت انجام شد! بسته XDR تراکنش به صورت زیر میباشد.`;
         finalResult = <div>
-          Network Passphrase:<br />
-          {this.props.networkPassphrase}<br />
-          Hash:<br />
+           رمز عبور شبکه:<br />{this.props.networkPassphrase}<br />
+          چکیده:<br />
           {transactionBuild.hash}<br />
-          XDR:<br />
+          فرم XDR  :<br />
           {transactionBuild.xdr}
           </div>
         signingInstructions = <p className="TransactionBuilderResult__instructions">

@@ -46,14 +46,14 @@ class TransactionSigner extends React.Component {
       let transaction = new Transaction(xdr);
 
       let infoTable = {
-        'Signing for': <pre className="so-code so-code__wrap"><code>{networkPassphrase}</code></pre>,
-        'Transaction Envelope XDR': <EasySelect plain={true}><pre className="so-code so-code__wrap"><code>{xdr}</code></pre></EasySelect>,
-        'Transaction Hash': <EasySelect plain={true}><pre className="so-code so-code__wrap"><code>{transaction.hash().toString('hex')}</code></pre></EasySelect>,
-        'Source account': transaction.source,
-        'Sequence number': transaction.sequence,
-        'Transaction Fee (stroops)': transaction.fee,
-        'Number of operations': transaction.operations.length,
-        'Number of existing signatures': transaction.signatures.length,
+        'رمز عبور شبکه': <pre className="so-code so-code__wrap"><code>{networkPassphrase}</code></pre>,
+        ' پاکت XDR تراکنش': <EasySelect plain={true}><pre className="so-code so-code__wrap"><code>{xdr}</code></pre></EasySelect>,
+        'چکیده تراکنش': <EasySelect plain={true}><pre className="so-code so-code__wrap"><code>{transaction.hash().toString('hex')}</code></pre></EasySelect>,
+        'حساب مبدا': transaction.source,
+        'شماره توالی': transaction.sequence,
+        'کارمزد تراکنش (استروپ)': transaction.fee,
+        'تعداد عملیات': transaction.operations.length,
+        'تعداد امضاهای موجود': transaction.signatures.length,
       };
 
       let codeResult, submitLink, xdrLink, resultTitle, submitInstructions;
@@ -64,15 +64,15 @@ class TransactionSigner extends React.Component {
           className="s-button TxSignerResult__submit"
           href={txPostLink(result.xdr)}
           onClick={scrollOnAnchorOpen}
-          >Submit to Post Transaction endpoint</a>;
+          >تراکنش را ارسال نمایید.</a>;
         xdrLink = <a
           className="s-button TxSignerResult__submit"
           href={xdrViewer(result.xdr, 'TransactionEnvelope')}
           onClick={scrollOnAnchorOpen}
           >در بخش نمایش دهنده XDR نشان داده شود.</a>;
-        resultTitle = <h3 className="TxSignerResult__title">Transaction signed!</h3>;
+        resultTitle = <h3 className="TxSignerResult__title"> تراکنش امضا شد!</h3>;
         submitInstructions = <p className="TxSignerResult__instructions">
-          اکنون تراکنش شما امضا شده و شما میتوانید آن را در شبکه ارسال و ثبت کنید.نتایج به شما اعلام خواهد شد.
+          اکنون تراکنش شما امضا شده و شما میتوانید آن را در شبکه ارسال و ثبت کنید. نتایج به شما اعلام خواهد شد.
         </p>
       }
 
@@ -100,7 +100,7 @@ class TransactionSigner extends React.Component {
           <div className="so-chunk">
             <div className="TxSignerOverview TransactionSigner__overview">
               <div className="TxSignerOverview__titleBar">
-                <p className="TxSignerOverview__titleBar__title">Transaction overview</p>
+                <p className="TxSignerOverview__titleBar__title"> لطفا قبل از ارسال، اطلاعات تراکنش را به طور کامل بررسی نمایید</p>
                 <a className="TxSignerOverview__titleBar__reset"
                   onClick={() => dispatch(clearTransaction())}>
                   تراکنش فعلی را پاک کرده و یک تراکنش جدید بسازید.</a>
@@ -163,7 +163,7 @@ class TransactionSigner extends React.Component {
             <p>
               برای تراکنشهای ساده شما تنها به یک امضا نیاز دارید.برخی از تراکنشهای پیچیده در صورتی که بیش از یک مبدأ و کلید خصوصی داشته باشند به بیش از یک امضا برای انجام تراکنش نیاز دارند.
             </p>
-            <p><a href="https://www.stellar.org/developers/learn/concepts/multi-sig.html" target="_blank">برای مطالعه بیشتر در مورد امضاها در سایت توسعه دهندگان بر روی این لینک کلیک کنید.</a></p>
+           {/* <p><a href="https://www.stellar.org/developers/learn/concepts/multi-sig.html" target="_blank">برای مطالعه بیشتر در مورد امضاها در سایت توسعه دهندگان بر روی این لینک کلیک کنید.</a></p>*/}
           </div>
         </div>
       </div>

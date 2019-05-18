@@ -38,7 +38,8 @@ export default function SetOptions(props) {
         items={accountFlagFieldsSet}
         onUpdate={(value) => {props.onUpdate('setFlags', value)}}
         />
-      <p className="optionsTable__pair__content__note"><a href="https://en.wikipedia.org/wiki/Flag_field" target="_blank">پرچمهای </a>انتخاب شده به این معنا میباشند که به پرچمهایی که در حال حاضر در حساب کاربری موجود هستند اضافه خواهند شد. </p>
+      <p className="optionsTable__pair__content__note">پرچمهای انتخاب شده به این معنا میباشند که به پرچمهایی که در حال حاضر در حساب کاربری موجود هستند
+      <br/> اضافه خواهند شد . </p>
     </OptionsTablePair>,
     <OptionsTablePair
       label={<span>پاک کردن مجوزها <HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#flags" /></span>}
@@ -48,7 +49,7 @@ export default function SetOptions(props) {
         items={accountFlagFieldsClear}
         onUpdate={(value) => {props.onUpdate('clearFlags', value)}}
         />
-      <p className="optionsTable__pair__content__note"> <a href="https://en.wikipedia.org/wiki/Flag_field" target="_blank">پرچمهای </a>انتخاب شده به این معنا میباشند که این پرچمها در حال حاضر در این حساب وجود دارند.</p>
+      <p className="optionsTable__pair__content__note"> پرچمهای انتخاب شده به این معنا میباشند که این پرچمها در حال حاضر در این حساب وجود دارند .</p>
     </OptionsTablePair>,
     <OptionsTablePair
       label={<span>وزن حساب اصلی <HelpMark href="https://www.stellar.org/developers/learn/concepts/accounts.html#thresholds" /></span>}

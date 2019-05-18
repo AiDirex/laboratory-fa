@@ -69,7 +69,7 @@ class Introduction extends React.Component {
           {isLoggedIn && <div>
             <div>
               <p>{`${user.firstName} ${user.lastName} خوش آمدید.`}</p>
-              <p>برای <a className={'link-payment'} href={'#payment'}>پرداخت</a> کلیک کنید.</p>
+             {/* <p>برای <a className={'link-payment'} href={'#payment'}>پرداخت</a> کلیک کنید.</p>*/}
               <button className="s-button red btn-warning" onClick={() => {this.logout()}}>خروج</button>
             </div>
             <div style={{}}>

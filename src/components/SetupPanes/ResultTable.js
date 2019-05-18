@@ -23,7 +23,7 @@ export class ResultTable extends React.Component {
             return data[k.name].map((obj, i) => {
               return <OptionsTablePair label={k.name} key={i}>
                 <ul>
-                  {k.fields.map((field) => {
+                  {k.fields.map((field)  => {
                     // console.log(`${k.name}.[${i}].${field}`)
                     let v = _.get(data, `${k.name}.[${i}].${field}`)
                     // return v !== undefined && v !== null && <li key={`${i}.${field}`}>{field}: {v}</li>
@@ -46,7 +46,7 @@ export class ResultTable extends React.Component {
             <OptionsTablePair label={this.translateKey(k)} key={k}>{v}</OptionsTablePair>
         }
       })}
-    </div>
+    </div>  
   }
 }
 
@@ -56,7 +56,7 @@ const translations = {
   created_at: 'تاریخ ساخت',
   balance: 'موجودی',
   asset_code:'کد سکه',
-  asset_issuer: 'صادر کننده سکه',
+  asset_issuer: 'صادرکننده سکه',
   amount: 'مقدار',
   account: 'حساب',
   starting_balance: 'موجودی اولیه',
@@ -96,7 +96,14 @@ const translations = {
   envelope_xdr: 'بسته xdr',
   fee_paid: 'کارمزد پرداخت شده',
   account_sequence:'شماره توالی حساب',
-
+  firstName:'نام',
+  lastName:'نام خانوادگی',
+  mobile:'شماره موبایل',
+  subentry_count:'تعداد ورودی',
+  balances:'موجودی ها',
+  records:'بایگانی',
+  pubKey:'کلید عمومی',
+  secretKey:' کلید خصوصی' 
 
 
 }

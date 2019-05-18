@@ -26,7 +26,8 @@ export default function PathPayment(props) {
         value={props.values['sendMax']}
         onUpdate={(value) => {props.onUpdate('sendMax', value)}}
         />
-      <p className="optionsTable__pair__content__note"> بیشترین مقداری که فرستنده تمایل دارد تا برای ارسال توسط مسیر هزینه کند. مقادیر میتوانند با توجه به پیشنهادات در دفتر سفارشها متفاوت باشانتخاب </p>
+      <p className="optionsTable__pair__content__note"> بیشترین مقداری که فرستنده تمایل دارد تا برای ارسال توسط مسیر هزینه کند. مقادیر میتواننند با توجه به
+      <br /> پیشنهادات در دفتر سفارشها متفاوت باشند </p>
     </OptionsTablePair>,
     <OptionsTablePair label="مسیر واسطه" key="path" optional="true">
       <ManualMultiPicker

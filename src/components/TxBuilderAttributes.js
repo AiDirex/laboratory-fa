@@ -36,7 +36,7 @@ export default function TxBuilderAttributes(props) {
           value={attributes['fee']}
           onUpdate={(value) => {onUpdate('fee', value)}}
           />
-        <p className="optionsTable__pair__content__note"> <a href="https://www.stellar.org/developers/learn/concepts/fees.html">کارمزد پایه شبکه</a> معادل ۱۰۰ استروپ در نظرگرفته شده است.کارمزد تراکنش برابر با کارمزد پایه در تعداد عملیات در یک تراکنش میباشد. </p>
+        <p className="optionsTable__pair__content__note"> کارمزد پایه شبکه معادل ۱۰۰ استروپ در نظرگرفته شده است.کارمزد تراکنش برابر با کارمزد پایه در تعداد عملیات در یک تراکنش     میباشد. </p>
       </OptionsTablePair>
       <OptionsTablePair optional={true} label={<span>از طرف(اختیاری) <HelpMark href="https://www.stellar.org/developers/learn/concepts/transactions.html#memo" /></span>}>
         <MemoPicker
@@ -85,9 +85,9 @@ class sequenceFetcherClass extends React.Component {
         onClick={() => dispatch(
           fetchSequence(attributes.sourceAccount, horizonURL)
         )}
-        >Fetch next sequence number for account starting with "{truncatedAccountId}"</a>
+        >شماره توالی حساب  "{truncatedAccountId}" را به دست آورید</a>
       <br />
-      <small>Fetching from: <code>{horizonURL}</code></small><br />
+      <small> اطلاعات از سرور: <code>{horizonURL}</code></small><br />
       {sequenceErrorMessage}
     </p>
   }
