@@ -21,7 +21,7 @@ export class ResultTable extends React.Component {
         if (typeof k === 'object' && k.fields && k.array === true) {
           if (data && data[k.name]) {
             return data[k.name].map((obj, i) => {
-              return <OptionsTablePair label={k.name} key={i}>
+              return <OptionsTablePair label={this.translateKey(k.name)} key={i}>
                 <ul>
                   {k.fields.map((field)  => {
                     // console.log(`${k.name}.[${i}].${field}`)
@@ -46,7 +46,7 @@ export class ResultTable extends React.Component {
             <OptionsTablePair label={this.translateKey(k)} key={k}>{v}</OptionsTablePair>
         }
       })}
-    </div>  
+    </div>
   }
 }
 
@@ -101,9 +101,9 @@ const translations = {
   mobile:'شماره موبایل',
   subentry_count:'تعداد ورودی',
   balances:'موجودی ها',
-  records:'بایگانی',
+  records:'رکوردها',
   pubKey:'کلید عمومی',
-  secretKey:' کلید خصوصی' 
+  secretKey:' کلید خصوصی'
 
 
 }
