@@ -273,7 +273,7 @@ export const endpointsMap = {
         'path': {
           template: '/transactions/{transaction}/payments{?cursor,limit,order}',
         },
-        'fields': [{name: 'records', fields: ['funder', 'starting_balance', 'account'], array: true}],
+        'fields': [{name: 'records', fields: ['from', 'to', 'amount', 'asset_type'], array: true}],
         'setupComponent': require('../components/SetupPanes/ForTransaction'),
       }
     }

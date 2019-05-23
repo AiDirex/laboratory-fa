@@ -23,8 +23,13 @@ class Payment extends React.Component {
           </div>
           {isLoggedIn && <div>
             {general.showError && <p>{general.errorMsg}</p>}
+            {general.errors && <ErrorList errors={general.errors}/>}
             {general.showMsg && <p>{general.msg}</p>}
-            {general.errors && <ErrorList errors={general.errors} />}
+            {general.hash &&
+            <a
+              href={`#explorer?resource=payments&endpoint=for_transaction&values=${btoa(JSON.stringify({transaction: general.hash}))}`}>برای
+              مشاهده جزییات کلیک
+              کنید.</a>}
             <div>
               <OptionsTablePair label="شناسه پرداخت (اختیاری)" key="id">
                 <TextPicker value={form.id} onUpdate={(v) => {dispatch(setForm('id', v))}}/>

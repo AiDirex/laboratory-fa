@@ -25,11 +25,11 @@ function getResponseError (e) {
         return ['کلید خصوصی اشتباه است.']
       } else if (e.response.data.data.name === 'destination') {
         return ['آدرس مقصد اشتباه است.']
-      }else if (e.response.data.data.name === 'amount') {
+      } else if (e.response.data.data.name === 'amount') {
         return ['مقدار اشتباه است.']
-      }else if (e.response.data.data.name === 'asset_code') {
+      } else if (e.response.data.data.name === 'asset_code') {
         return ['کد دارایی اشتباه است.']
-      }else if (e.response.data.data.name === 'asset_issuer') {
+      } else if (e.response.data.data.name === 'asset_issuer') {
         return ['آدرس منتشر کننده دارایی اشتباه است.']
       }
       return [`${e.response.data.data.name} اشتباه است. `]
@@ -59,6 +59,7 @@ export function sendPayment (data) {
       dispatchInNewStack(dispatch, {
         type: PAY_SUCCESS,
         msg: 'تراکنش شما با موفقیت انجام شد.',
+        hash: response.data.hash
       })
     }).catch(e => {
       dispatchInNewStack(dispatch, {

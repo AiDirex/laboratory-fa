@@ -103,7 +103,9 @@ const translations = {
   balances:'موجودی ها',
   records:'رکوردها',
   pubKey:'کلید عمومی',
-  secretKey:' کلید خصوصی'
-
+  secretKey:' کلید خصوصی',
+  from: 'از',
+  to: 'به',
+  asset_type: 'نوع دارایی'
 
 }
