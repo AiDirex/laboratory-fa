@@ -29,6 +29,7 @@ export function sendChangeTrust (data) {
       dispatchInNewStack(dispatch, {
         type: TRUST_SUCCESS,
         msg: 'تراکنش شما با موفقیت انجام شد.',
+        hash: response.data.hash
       })
     }).catch(e => {
       dispatchInNewStack(dispatch, {

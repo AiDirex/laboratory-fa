@@ -35,6 +35,7 @@ export function sendOffer (data) {
       dispatchInNewStack(dispatch, {
         type: OFFER_REQ_SUCCESS,
         msg: 'تراکنش شما با موفقیت انجام شد.',
+        hash: response.data.hash
       })
     }).catch(e => {
       dispatchInNewStack(dispatch, {

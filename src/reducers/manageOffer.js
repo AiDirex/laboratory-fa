@@ -35,7 +35,8 @@ const defaultGeneralState = {
   showError: false,
   errorMsg: null,
   showMsg: false,
-  msg: null
+  msg: null,
+  hash: null
 }
 
 function general (state = defaultGeneralState, action) {
@@ -45,7 +46,8 @@ function general (state = defaultGeneralState, action) {
       msg: null,
       showError: true,
       errorMsg: action.errorMsg,
-      errors: action.errors
+      errors: action.errors,
+      hash: null
     })
   }
   if (action.type === OFFER_REQ_SUCCESS) {
@@ -53,7 +55,8 @@ function general (state = defaultGeneralState, action) {
       showMsg: true,
       msg: action.msg,
       showError: false,
-      errorMsg: null
+      errorMsg: null,
+      hash: action.hash
     })
   }
   return state

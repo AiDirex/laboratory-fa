@@ -23,8 +23,13 @@ class ChangeTrust extends React.Component {
           </div>
           {isLoggedIn && <div>
             {general.showError && <p>{general.errorMsg}</p>}
-            {general.showMsg && <p>{general.msg}</p>}
             {general.errors && <ErrorList errors={general.errors} />}
+            {general.showMsg && <p>{general.msg}</p>}
+            {general.hash &&
+            <a
+              href={`#explorer?resource=transactions&endpoint=single&values=${btoa(JSON.stringify({transaction: general.hash}))}`}>برای
+              مشاهده جزییات کلیک
+              کنید.</a>}
             <div>
               <OptionsTablePair label="کلید خصوصی" key="source">
                 <TextPicker value={form.source} onUpdate={(v) => {dispatch(setForm('source', v))}}/>
