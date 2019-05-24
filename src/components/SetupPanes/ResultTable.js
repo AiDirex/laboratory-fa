@@ -63,10 +63,10 @@ const translations = {
   type: 'نوع',
   weight: 'وزن',
   sequence: 'شماره توالی',
-  successful_transaction_count: 'شماره ترتیب تراکنشهای موفق',
-  failed_transaction_count: 'شماره ترتیب تراکنشهای ناموفق',
-  operation_count: 'شماره ترتیب عملیات',
-  closed_at: 'تاریخ بسته شدن',
+  successful_transaction_count: 'شماره ترتیب   تراکنشهای     موفق',
+  failed_transaction_count: 'شماره ترتیب   تراکنشهای       ناموفق',
+  operation_count: 'شماره ترتیب    عملیات',
+  closed_at: 'تاریخ بستن ',
   seller: 'فروشنده',
   id: 'شناسه',
   price: 'قیمت',
@@ -106,6 +106,7 @@ const translations = {
   secretKey:' کلید خصوصی',
   from: 'از',
   to: 'به',
-  asset_type: 'نوع دارایی'
+  asset_type: 'نوع دارایی',
+  asks: 'پیشنهاد'
 
 }

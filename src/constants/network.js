@@ -2,15 +2,15 @@ import {Network, Networks} from 'stellar-sdk';
 
 const NETWORK = {
   api: {
-    base: 'http://polychain2.com:8080/api/v1'
+    base: 'http://polychain1.com:8080/api/v1'
   },
   bridge: {
-    base: 'http://polychain2.com/bridge'
+    base: 'http://polychain1.com:8006'
   },
   available: {
     main: {
-      horizonURL: 'http://polychain2.com:8000',
-      networkPassphrase: 'polychain'
+      horizonURL: 'http://polychain1.com:8000',
+      networkPassphrase: 'polychain_coin'
     },
     test: {
       horizonURL: 'https://horizon-testnet.stellar.org',
